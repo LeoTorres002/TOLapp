@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
       const SizedBox(width: 5),
       GestureDetector(
         onTap: () {
-          Navigator.pushReplacement(
+          Navigator.pushReplacement(   
             context,
             MaterialPageRoute(builder: (context) => RegisterScreen()),
           );
@@ -177,15 +177,19 @@ Future<void> _loadSavedCredentials() async {
           children: [
             _buildLabel('Email'),
               SizedBox(height: 8.h),
+
             _buildRoundedTextField(controller: _emailController, height: fieldHeight),
               SizedBox(height: 20.h),
+
             _buildLabel('Contraseña'),
               SizedBox(height: 8.h),
+
             _buildRoundedTextField(
               controller: _passwordController,
               isPassword: true,
               height: fieldHeight,
             ),
+            
             SizedBox(height: 80.h),
             _isLoading
             ? const CircularProgressIndicator()

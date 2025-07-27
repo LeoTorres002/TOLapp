@@ -72,7 +72,6 @@ class Inicio extends StatelessWidget {
                         },
                       ),
                     ),
-
                     SizedBox(height: screenHeight * 0.01.h),
                     ImageCarousel(  //segundo slider (cursos)
                       images: AppData.cursos, // se llama a la API para traer los sliders de los cursos ya definidos en el main

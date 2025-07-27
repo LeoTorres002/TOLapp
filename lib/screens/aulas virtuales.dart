@@ -20,15 +20,19 @@ class _AulasVirtualesState extends State<AulasVirtualesScreen> {
       ..setBackgroundColor(const Color(0x00000000))
       ..setNavigationDelegate(
         NavigationDelegate(
+          
           onPageStarted: (String url) {
             setState(() => isLoading = true);
           },
+
           onPageFinished: (String url) {
             setState(() => isLoading = false);
           },
+
           onWebResourceError: (WebResourceError error) {
             debugPrint("Error cargando página: ${error.description}");
           },
+
         ),
       )
       ..loadRequest(Uri.parse("https://theoriginallab.com/aula-virtual-apps#precios"));

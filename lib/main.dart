@@ -174,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  /// se construye la lista de las opcioes del drawermenu
+  /// se construye la lista de las opcioes del drawermenu o del menu hamburguesa
   List<Map<String, dynamic>> _buildDrawerMenu(bool isDarkMode) {
     return [
       {
@@ -256,15 +256,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
       {'isDivider': true},
 
-      {
+  {
   'icon': FontAwesomeIcons.arrowRightFromBracket,
   'label': 'Cerrar sesión',
   'onTap': () async {
-    // 1. Limpiar la sesión
+
+    // se cierra la sesión y se redirige a la pantalla de bienvenida
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('isLoggedIn'); // O usar SessionHelper.clearSession()
     
-    // 2. Redirigir a Bienvenida
+    // Redirigir a la pantalla de bienvenida
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
         builder: (_) => const Bienvenida(),

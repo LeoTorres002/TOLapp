@@ -76,12 +76,12 @@ class _SplashScreenState extends State<SplashScreen>
 
   void _navigateToHomeScreen() async {
   final prefs = await SharedPreferences.getInstance();
-  final isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+  final isLoggedIn = prefs.getBool('isLoggedIn') ?? false; // Verifica si el usuario está logueado
 
   if (isLoggedIn) {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (_) => HomeScreen()),
+      MaterialPageRoute(builder: (_) => HomeScreen()), // Tu pantalla de inicio
     );
   } else {
     Navigator.pushReplacement(

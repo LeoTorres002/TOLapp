@@ -8,6 +8,7 @@ class UserService {
   final String baseUrl = "https://api.originalauth.com"; // url de la API 
 
 //REGISTRO DE USUARIOS//
+
   Future<dynamic> registro({
     // funcion llamada "registro" y se ejecuta el registro de un usuario
     required String email,
@@ -36,6 +37,7 @@ class UserService {
   }
 
 //LOGIN//
+
 Future<bool> login({
   // funcion llamada "login" y se inicia sesion de un usuario
   required String email,
